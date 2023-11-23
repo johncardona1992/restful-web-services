@@ -1,4 +1,4 @@
-package com.in28minutes.rest.webservices.restfulwebservices.User;
+package com.in28minutes.rest.webservices.restfulwebservices.user;
 
 import java.net.URI;
 import java.util.List;
@@ -30,7 +30,10 @@ public class UserResource {
     // get user by id
     @GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable int id){
-        return service.findOne(id);
+        User user =  service.findOne(id);
+        if (user == null)
+            throw new UserNotFoundException("id" + id);
+        return user;
     }
 
     // create user

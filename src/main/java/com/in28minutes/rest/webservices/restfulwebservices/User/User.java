@@ -1,4 +1,4 @@
-package com.in28minutes.rest.webservices.restfulwebservices.User;
+package com.in28minutes.rest.webservices.restfulwebservices.user;
 
 import java.time.LocalDate;
 
